@@ -28,12 +28,12 @@ $$
 \qquad r_{\mathrm b}=\epsilon^{-1}.
 $$
 
-Here, \(M_{\mathrm b}\) is the bulge mass, \(\epsilon\) has units of **kpc\(^{-1}\)**, and \(r_{\mathrm b}\) is the exponential scale length in **kpc**. The fractional model is constructed to reproduce the reference model exactly at \(s=1\); its reference length is \(\ell_0=1\) kpc by default.
+Here, $M_{\mathrm b}$ is the bulge mass, $\epsilon$ has units of **kpc$^{-1}$**, and $r_{\mathrm b}$ is the exponential scale length in **kpc**. The fractional model is constructed to reproduce the reference model exactly at $s=1$; its reference length is $\ell_0=1$ kpc by default.
 
 All four models use the same *functional form* for the NFW dark-matter halo, but **the halo parameters are fitted**, not held fixed. The thin exponential disk is treated in two ways:
 
-- **Fixed disk:** \(M_{\mathrm d}=6.0\times10^{10}\,M_\odot\) and \(R_{\mathrm d}=5.4\) kpc.
-- **Marginalized disk:** \(M_{\mathrm d}\) and \(R_{\mathrm d}\) are free parameters, with the same prior ranges for every bulge model.
+- **Fixed disk:** $M_{\mathrm d}=6.0\times10^{10}\,M_\odot$ and $R_{\mathrm d}=5.4$ kpc.
+- **Marginalized disk:** $M_{\mathrm d}$ and $R_{\mathrm d}$ are free parameters, with the same prior ranges for every bulge model.
 
 The fractional prescription is a controlled phenomenological benchmark, not a complete theory of Galactic dynamics. The fitting assumes spherical bulge and halo components, an axisymmetric thin disk, and independent Gaussian observational errors.
 
@@ -49,7 +49,7 @@ The pipeline supports three published Milky Way rotation curves:
 
 ### Input format
 
-Each input file must contain numerical columns for Galactocentric radius \(R\), observed circular speed \(v\), and velocity uncertainty \(\sigma\):
+Each input file must contain numerical columns for Galactocentric radius $R$, observed circular speed $v$, and velocity uncertainty $\sigma$:
 
 ```text
 # R [kpc]   v [km/s]   sigma [km/s]
@@ -61,7 +61,7 @@ Each input file must contain numerical columns for Galactocentric radius \(R\), 
 
 The numbers above illustrate the **file format only**; they are not observational measurements. A real dataset must contain at least five valid rows. Whitespace-, comma-, semicolon-, and tab-delimited numeric tables are supported, with `#` comments. Headers should be commented out.
 
-By default, columns **0, 1, 2** are interpreted as \((R,v,\sigma)\) for three-column tables, or columns **0, 1, 3** for tables with four or more columns. Column indices start at zero. Override the mapping when needed with `--cols-sofue2020`, `--cols-sofue2025`, or `--cols-huang2016`, using a string such as `0,1,2`.
+By default, columns **0, 1, 2** are interpreted as $(R,v,\sigma)$ for three-column tables, or columns **0, 1, 3** for tables with four or more columns. Column indices start at zero. Override the mapping when needed with `--cols-sofue2020`, `--cols-sofue2025`, or `--cols-huang2016`, using a string such as `0,1,2`.
 
 The script assumes radii are in kpc unless explicitly specified or automatically detected as pc (the `auto` setting converts radii when the largest finite value exceeds 500). To avoid ambiguity, explicitly provide `--radius-unit-<dataset> kpc` or `pc` for the corresponding dataset.
 
@@ -170,12 +170,12 @@ Parameter-prior bounds, the fractional-order interval, and numerical integration
 
 When the relevant datasets are selected, the pipeline constructs additional fits to test:
 
-1. **Inner radial cuts** for Sofue & Kohno (2025): \(R_{\min}=0.05, 0.10, 0.20, 0.50, 1.00\) kpc.
-2. **Matched radial coverage:** \(0.10\le R\le25.57\) kpc for Sofue (2020) and Sofue & Kohno (2025).
-3. **Fractional-kernel resolution:** production \(N_q=1536\) versus a lower-resolution \(N_q=384\) comparison, by default.
+1. **Inner radial cuts** for Sofue & Kohno (2025): $R_{\min}=0.05, 0.10, 0.20, 0.50, 1.00$ kpc.
+2. **Matched radial coverage:** $0.10\le R\le25.57$ kpc for Sofue (2020) and Sofue & Kohno (2025).
+3. **Fractional-kernel resolution:** production $N_q=1536$ versus a lower-resolution $N_q=384$ comparison, by default.
 4. **Disk-model dependence:** fixed and jointly fitted disk mass/scale length.
 
-The code performs internal checks of the Newtonian \(s=1\) limit and fractional-kernel numerical validity before fitting, unless `--skip-tests` is provided. These checks are not a substitute for independent scientific validation.
+The code performs internal checks of the Newtonian $s=1$ limit and fractional-kernel numerical validity before fitting, unless `--skip-tests` is provided. These checks are not a substitute for independent scientific validation.
 
 ## Output files
 
@@ -208,9 +208,7 @@ results/
         └── ...
 ```
 
-Case folders can also contain rotation-curve and residual plots (`.png`, `.pdf`), corner plots (when enabled and available), `priors.csv`, and `case_manifest.json`. Combined comparison plots and tables are created where the relevant results exist. Some products are omitted when the necessary cases, posterior samples, or optional plotting packages are unavailable.
-
-The primary fit statistics are \(\chi^2\), reduced \(\chi^2\), AIC, BIC, and (with `dynesty`) \(\ln Z\). Posterior summaries contain parameter quantiles and, for the fractional model, \(P(s>1)\). **`--sampler optimize` does not calculate Bayesian evidence or posterior credible intervals.**
+The primary fit statistics are $\chi^2$, reduced $\chi^2$, AIC, BIC, and (with `dynesty`) $\ln Z$. Posterior summaries contain parameter quantiles and, for the fractional model, $P(s>1)$. **`--sampler optimize` does not calculate Bayesian evidence or posterior credible intervals.**
 
 The inferred evidence depends on the adopted priors; compare models only under the specified assumptions and shared prior conventions.
 
