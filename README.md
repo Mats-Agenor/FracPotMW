@@ -28,7 +28,7 @@ $$
 \qquad r_{\mathrm b}=\epsilon^{-1}.
 $$
 
-Here, $M_{\mathrm b}$ is the bulge mass, $\epsilon$ has units of **kpc$^{-1}$**, and $r_{\mathrm b}$ is the exponential scale length in **kpc**. The fractional model is constructed to reproduce the reference model exactly at $s=1$; its reference length is $\ell_0=1$ kpc by default.
+Here, $M_{\mathrm b}$ is the bulge mass, $\epsilon$ has units of kpc$^{-1}$, and $r_{\mathrm b}$ is the exponential scale length in **kpc**. The fractional model is constructed to reproduce the reference model exactly at $s=1$; its reference length is $\ell_0=1$ kpc by default.
 
 All four models use the same *functional form* for the NFW dark-matter halo, but **the halo parameters are fitted**, not held fixed. The thin exponential disk is treated in two ways:
 
