@@ -214,16 +214,9 @@ The primary fit statistics are \(\chi^2\), reduced \(\chi^2\), AIC, BIC, and (wi
 
 The inferred evidence depends on the adopted priors; compare models only under the specified assumptions and shared prior conventions.
 
-## Reproducibility and citation
-
-For reproducibility, record the dataset versions, input-column selections, priors, disk assumption, quadrature settings, sampler configuration, and random seed. The script stores its command-line configuration in `run_config.json` and writes results separately for each model and robustness case.
+##  Citation
 
 If this code contributes to a publication, please cite the associated study:
 
 > Matheus Agenor and Thiago M. Marchesin, *A Bayesian Test of Fractional Gravitational Deformations in the Milky Way Bulge* (manuscript).
 
-Replace the manuscript citation with the final journal/DOI reference once available. The observational datasets should also be cited to their respective original publications.
-
-## License
-
-No software license is specified in this README. Before publicly distributing or inviting reuse of the repository, add a `LICENSE` file defining the intended terms.
