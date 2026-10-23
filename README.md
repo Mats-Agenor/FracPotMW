@@ -1,4 +1,4 @@
-# FracPotMW — Milky Way Rotation-Curve Model Comparison
+# FracPotMW 
 
 `FracPotMW.py` is a Python pipeline for fitting Milky Way rotation curves and comparing four spherical bulge models within a common bulge–disk–halo decomposition. It combines numerical optimization with optional Bayesian nested sampling and includes robustness checks for the disk prescription, radial selection, and fractional-kernel resolution.
 
